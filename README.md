@@ -6,6 +6,7 @@ England, M. R., N. Feldl, and I. Eisenman (2024), Sea ice perturbations in aquap
 
 ## Instructions
 How to configure the CESM2-CAM6 aquaplanet GCM with thermodynamic sea ice.
+
 A few changes were made to the source code before building the case.
 Firstly, in ~/cesm2/cime/src/drivers/mct/shr/seq_infodata_mod.F90 I commented out the following to include a seasonal cycle.
 ```
@@ -20,7 +21,7 @@ Secondly, in ~/cesm2/components/cice/src/source/ice_domain_size.F90 I changed th
 nilyr     = 1
 nslyr     = 1
 ```
-I then setup a case with the following compset 1850_CAM60_SLND_CICE_DOCN%SOM_SROF_SGLC_SWAV
+I then setup a case with the following compset `1850_CAM60_SLND_CICE_DOCN%SOM_SROF_SGLC_SWAV`
 The following lines were added to user_nl_cice. The choice of r_snw = 0.70 was set here, with ice dynamics turned off.
 ```
 kdyn = 0
@@ -156,7 +157,9 @@ orb_mode  = 'fixed_parameters'
 ```
 In L314 of env_build.xml the following change from prognostic to thermo_only were made (not sure if totally necessary)
 `<entry id="CICE_MODE" value="thermo_only">`
+
 The following line was added to the user_nl_docn file
 `domainfile = '~/domain/domain.aqua.fv1.9x2.5.nc'`
+
 After that the case was built, and submitted as normal.
 
