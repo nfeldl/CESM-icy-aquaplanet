@@ -4,8 +4,7 @@
 If you use this model configuration, please cite the following paper:
 England, M. R., N. Feldl, and I. Eisenman (2024), Sea ice perturbations in aquaplanet simulations: Isolating the physical climate responses from model interventions, *Environmental Research: Climate*, [doi:10.1088/2752-5295/ad9b45](https://doi.org/10.1088/2752-5295/ad9b45).
 
-## Instructions
-How to configure the CESM2-CAM6 aquaplanet GCM with thermodynamic sea ice.
+## Instructions 
 
 A few changes were made to the source code before building the case.
 Firstly, in ~/cesm2/cime/src/drivers/mct/shr/seq_infodata_mod.F90 I commented out the following to include a seasonal cycle.
@@ -143,7 +142,7 @@ co2vmr = 284.7e-6
 ```
 The following changes were made which determine the depth of the mixed layer and the climatological Q-flux input
 ```
-./xmlchange LND_DOMAIN_PATH=/home/maenglan/domain/
+./xmlchange LND_DOMAIN_PATH=~/domain/
 ./xmlchange LND_DOMAIN_FILE=domain.aqua.fv1.9x2.5.nc
 ./xmlchange DOCN_MODE=som
 ./xmlchange DOCN_SOM_FILENAME=som.forcing.aquaplanet.Qflux4xCO2annualNHSH_h30_sstQOBS_corrected.2degFV.nc
