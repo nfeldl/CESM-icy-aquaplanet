@@ -4,6 +4,8 @@
 If you use this model configuration, please cite the following paper:
 England, M. R., N. Feldl, and I. Eisenman (2024), Sea ice perturbations in aquaplanet simulations: Isolating the physical climate responses from model interventions, *Environmental Research: Climate*, [doi:10.1088/2752-5295/ad9b45](https://doi.org/10.1088/2752-5295/ad9b45).
 
+The `model_input` files are available at the Zenodo repository [https://zenodo.org/records/14914864](https://zenodo.org/records/14914864).
+
 ## Instructions 
 
 A few changes were made to the source code before building the case.
